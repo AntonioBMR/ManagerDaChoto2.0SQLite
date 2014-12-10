@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:id="@+id/dialogo_alta">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:weightSum="1"
+        android:id="@+id/nombre">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:id="@+id/nomA" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et2A"
+            android:layout_weight="0.87" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:weightSum="1"
+        android:id="@+id/fecha">
+
+        <TextView
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha Nacimiento"
+            android:id="@+id/dorA" />
+
+        <EditText
+            android:layout_width="58dp"
+            android:layout_height="fill_parent"
+            android:numeric="integer"
+            android:inputType="number"
+            android:id="@+id/et1DA" />
+
+        <EditText
+            android:layout_width="58dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/et1MA"
+            android:numeric="integer"
+            android:inputType="number" />
+
+        <EditText
+            android:layout_width="88dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/et1AA"
+            android:numeric="integer"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/telefono"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="Teléfono"
+            android:id="@+id/telA" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/et3A"
+            android:inputType="number"
+            android:layout_weight="0.88" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:id="@+id/media"
+        android:weightSum="1">
+
+    </LinearLayout>
+
+</LinearLayout>
