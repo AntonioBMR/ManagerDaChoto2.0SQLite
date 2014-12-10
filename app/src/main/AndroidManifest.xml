@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.antonio.android.managerdachoto20sqlite.AgregarPartido"
-            android:label="@string/title_activity_agregar_partido" >
-        </activity>
-        <activity
             android:name="com.antonio.android.managerdachoto20sqlite.Secundaria"
             android:label="@string/title_activity_secundaria" >
         </activity>
