@@ -39,11 +39,15 @@ public class Principal extends Activity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                String[] opc = new String[]{"Borrar", "Modificar","Añadir partido"};
+                String b=getString(R.string.borrar);
+                String m=getString(R.string.modificar);
+                String a=getString(R.string.anadeP);
+                String o=getString(R.string.opciones);
+                String[] opc = new String[]{b,m,a};
                 final int posicion = position;
                 AlertDialog opciones = new AlertDialog.Builder(
                         Principal.this)
-                        .setTitle("Opciones")
+                        .setTitle(o)
                         .setItems(opc,
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog,
@@ -134,14 +138,20 @@ public class Principal extends Activity {
         etFA = (EditText) vista.findViewById(R.id.et1AA);
         etN = (EditText) vista.findViewById(R.id.et2A);
         etT = (EditText) vista.findViewById(R.id.et3A);
-        etFD.setHint("Dia");
-        etFM.setHint("Mes");
-        etFA.setHint("Año");
-        etN.setHint("Introduzca nombre");
-        etT.setHint("Introduzca teléfono");
+        String dia=getString(R.string.dia);
+        String mes=getString(R.string.mes);
+        String ano=getString(R.string.ano);
+        String agr=getString(R.string.agregaJ);
+        String nombre=getString(R.string.introduzcaNombre);
+        String telefono=getString(R.string.introduzcaTelefono);
+        etFD.setHint(dia);
+        etFM.setHint(mes);
+        etFA.setHint(ano);
+        etN.setHint(nombre);
+        etT.setHint(telefono);
         final AlertDialog d = new AlertDialog.Builder(this)
                 .setView(vista)
-                .setTitle("Añadir jugador")
+                .setTitle(agr)
                 .setPositiveButton(android.R.string.ok, null) //Set to null. We override the onclick
                 .setNegativeButton(android.R.string.cancel, null)
                 .create();
@@ -167,26 +177,38 @@ public class Principal extends Activity {
                                 gj.insert(j);
                                 c = gj.getCursor(null, null, null);
                                 ac.changeCursor(c);
-                                tostada("El jugador " + j.getNombre() + " ha sido añadido");
+                                String elj=getString(R.string.eljugador);
+                                String hs=getString(R.string.hasidoananido);
+                                tostada(elj+" " + j.getNombre() + " "+hs);
                                 d.dismiss();
                             }else{
-                                tostada("fecha erronea");
+                                String s=getString(R.string.fechaerronea);
+                                tostada(s);
                             }
                         }
                         // Filtramos que nos este vacios
                         if (etN.getText().toString().length() == 0) {
-                            tostada("¡Introduzca nombre!");
+                            String s=getString(R.string.introduzcaNombre);
+                            tostada(s);
                         }
                         if (etT.getText().toString().length() == 0) {
-                            tostada("¡Introduzca teléfono!");
+                            String s=getString(R.string.introduzcaTelefono);
+                            tostada(s);
                         }
                         if (etFD.getText().toString().length() == 0) {
-                            tostada("¡Introduzca dorsal!");
+                            String s=getString(R.string.introduzcaDia);
+                            tostada(s);
                         }
-
+                        if (etFM.getText().toString().length() == 0) {
+                            String s=getString(R.string.introduzcaMes);
+                            tostada(s);
+                        }
+                        if (etFA.getText().toString().length() == 0) {
+                            String s=getString(R.string.introduzcaMes);
+                            tostada(s);                        }
                         if (!esTelefono(etT.getText().toString())) {
-                            tostada("¡Teléfono incorrecto!");
-                        }
+                            String s=getString(R.string.tlfInc);
+                            tostada(s);                        }
                     }
                 });
             }
@@ -213,10 +235,11 @@ public class Principal extends Activity {
         etFA.setText(j.getFnac().split("-")[2]);
         etN.setText(j.getNombre());
         etT.setText(j.getTelefono());
+        String s=getString(R.string.modificaJ);
 
         final AlertDialog d = new AlertDialog.Builder(this)
                 .setView(vista)
-                .setTitle("Modificar jugador")
+                .setTitle(s)
                 .setPositiveButton(android.R.string.ok, null) //Set to null. We override the onclick
                 .setNegativeButton(android.R.string.cancel, null)
                 .create();
@@ -241,32 +264,34 @@ public class Principal extends Activity {
                                 gj.update(j);
                                 c = gj.getCursor(null,null,null);
                                 ac.changeCursor(c);
-                                tostada("El jugador " + j.getNombre() + " ha sido modificado");
+                                String ej=getString(R.string.eljugador);
+                                String has=getString(R.string.hasidomodificado);
+                                tostada(ej+" " + j.getNombre() + " "+has);
                                 d.dismiss();
                             }else{
-                                tostada("fecha erronea");
+                                String fec=getString(R.string.fechaerronea);
+                                tostada(fec);
                             }
-
                         }
                         // Filtramos que nos este vacios
                         if (etN.getText().toString().length() == 0) {
-                            tostada("¡Introduzca nombre!");
-                        }
+                            String s=getString(R.string.introduzcaNombre);
+                            tostada(s);                        }
                         if (etT.getText().toString().length() == 0) {
-                            tostada("¡Introduzca teléfono!");
-                        }
+                            String s=getString(R.string.introduzcaTelefono);
+                            tostada(s);                          }
                         if (etFD.getText().toString().length() == 0) {
-                            tostada("¡Introduzca dia!");
-                        }
+                            String s=getString(R.string.introduzcaDia);
+                            tostada(s);                          }
                         if (etFM.getText().toString().length() == 0) {
-                            tostada("¡Introduzca mes!");
-                        }
+                            String s=getString(R.string.introduzcaMes);
+                            tostada(s);                          }
                         if (etFA.getText().toString().length() == 0) {
-                            tostada("¡Introduzca año!");
-                        }
+                            String s=getString(R.string.introduzcaAno);
+                            tostada(s);                          }
                         if (!esTelefono(etT.getText().toString())) {
-                            tostada("¡Teléfono incorrecto!");
-                        }
+                            String s=getString(R.string.tlfInc);
+                            tostada(s);                          }
                     }
                 });
             }
@@ -278,24 +303,28 @@ public class Principal extends Activity {
 
     }
     public boolean borrar(final int pos){
+        String dsea=getString(R.string.deseaBorrar);
+        String imp=getString(R.string.importante);
+        String conf=getString(R.string.confirmar);
         AlertDialog.Builder dialogo1 = new AlertDialog.Builder(Principal.this);
-        dialogo1.setTitle("Importante");
-        dialogo1.setMessage("¿ Desea borrar el inmueble seleccionado ?");
+        dialogo1.setTitle(imp);
+        dialogo1.setMessage(dsea);
         dialogo1.setCancelable(false);
-        dialogo1.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
+        dialogo1.setPositiveButton(conf, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
 
                 List<Jugador> jugadores=gj.select();
                 Jugador j=jugadores.get(pos);
-                System.out.println("jugador "+j.toString());
                 gj.delete(j);
                 c = gj.getCursor(null, null, null);
                 ac.changeCursor(c);
                 dialogo1.dismiss();
-                tostada("Inmueble borrado");
+                String jB=getString(R.string.jBorrado);
+                tostada(jB);
             }
         });
-        dialogo1.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        String s=getString(R.string.cancel);
+        dialogo1.setNegativeButton(s, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialogo1, int id) {
                 dialogo1.cancel();
             }

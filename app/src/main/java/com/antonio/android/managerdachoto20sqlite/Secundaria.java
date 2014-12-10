@@ -14,6 +14,7 @@ public class Secundaria extends Activity {
     private GestorJugadores gj;
     private Button agregar;
     private EditText val;
+    private EditText etCont;
     private long idJ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class Secundaria extends Activity {
              id = b.getLong("id");
         }
         idJ=id;
-        final EditText etCont=(EditText)findViewById(R.id.etContAP);
+        etCont=(EditText)findViewById(R.id.etContAP);
         agregar=(Button)findViewById(R.id.buttonAP);
         val=(EditText)findViewById(R.id.etValAP);
         val.setFilters(new InputFilter[]{new InputFilterMinMax("1", "10")});
@@ -36,7 +37,8 @@ public class Secundaria extends Activity {
             public void onClick(View v) {
                 if(gp.existeCont(etCont.getText().toString())){
                     if(gp.jugoPartido(etCont.getText().toString(),idJ)){
-                        tostada("ya ha jugado ese partido");
+                        String mensaje=getString(R.string.tostadaJugadoA2);
+                        tostada(mensaje);
                     }else{
                         int valoracion=0;
                         try{
@@ -51,7 +53,9 @@ public class Secundaria extends Activity {
                         p.setIdJ(idJ);
                         p.setValoracionP(valoracion);
                         gp.insert(p);
-                        tostada("la VALORACIÓN media es: "+gp.mediaJugador(idJ)+"");
+                        String mensaje=getString(R.string.tostadaValoracionA2);
+
+                        tostada(mensaje+gp.mediaJugador(idJ)+"");
                         finish();
                     }
                 }else{
@@ -75,7 +79,9 @@ public class Secundaria extends Activity {
                     p.setIdJ(idJ);
                     p.setValoracionP(valoracion);
                     gp.insert(p);
-                    tostada("la VALORACIÓN media es: "+gp.mediaJugador(idJ)+"");
+                    String mensaje=getString(R.string.tostadaValoracionA2);
+
+                    tostada(mensaje+gp.mediaJugador(idJ)+"");
                     finish();
                 }
 

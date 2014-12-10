@@ -18,12 +18,12 @@
             android:id="@+id/tvPartidos"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:text="Contrincante" />
+            android:text="@string/contrincante" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Id Jugador"
+            android:text="@string/idJ"
             android:id="@+id/textView"
             android:layout_weight="1"
             android:layout_margin="5dp" />
@@ -31,7 +31,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valoracion"
+            android:text="@string/valoracion"
             android:id="@+id/textView4"
             android:layout_weight="1"
             android:layout_margin="5dp" />

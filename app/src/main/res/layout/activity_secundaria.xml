@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Nombre Contrincante"
+            android:text="@string/nombreCont"
             android:id="@+id/nomAP" />
 
         <EditText
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:text="Valoración"
+            android:text="@string/valoracion"
             android:id="@+id/tvValAP" />
 
         <EditText
@@ -53,7 +53,7 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Agregar valoración"
+        android:text="@string/agrVal"
         android:id="@+id/buttonAP"
         android:layout_gravity="center_horizontal" />
 

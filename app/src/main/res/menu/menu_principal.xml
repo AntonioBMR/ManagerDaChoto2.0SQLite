@@ -1,7 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".Principal">
-    <item android:id="@+id/agregar" android:title="Agregar Jugador"
+    <item android:id="@+id/agregar" android:title="@string/agregaJ"
     android:orderInCategory="100" android:showAsAction="never" />
-    <item android:id="@+id/partidos" android:title="ver partidos jugados"
+    <item android:id="@+id/partidos" android:title="@string/verP"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>

@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="15dp"
-            android:text="Fecha Nacimiento"
+            android:text="@string/fecha"
             android:id="@+id/textView1"
             android:textAlignment="center"
             android:textSize="6dp"
@@ -44,7 +44,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="10dp"
-            android:text="Nombre"
+            android:text="@string/nombre"
             android:id="@+id/textView2"
             android:textSize="6dp" />
 
@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="10dp"
-            android:text="Teléfono"
+            android:text="@string/telefono"
             android:id="@+id/textView3"
             android:textSize="6dp" />
 
